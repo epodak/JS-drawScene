@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>抛石头动画演示</title>
+    <style>
+      canvas {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>抛石头动画演示</h1>
+    <p>在这个演示中，你可以通过调整抛出角度和初速度的输入框，模拟一个石头的运动轨迹。</p>
+    <form>
+      <label for="angle">抛出角度（度）：</label>
+      <input type="number" id="angle" value="45" min="0" max="90" step="0.1" />
+      <br />
+      <label for="velocity">初速度（m/s）：</label>
+      <input type="number" id="velocity" value="50" min="0" max="100" step="1" />
+    </form>
+    <button id="startButton">开始抛石头</button>
+    <canvas id="canvas" width="800" height="600"></canvas>
+    <script src="script.js"></script>
+    <script>
+      var angleInput = document.getElementById("angle");
+      var velocityInput = document.getElementById("velocity");
+      var startButton = document.getElementById("startButton");
+
+      angleInput.addEventListener("change", update);
+      velocityInput.addEventListener("change", update);
+      startButton.addEventListener("click", startAnimation);
+    </script>
+  </body>
+</html>
